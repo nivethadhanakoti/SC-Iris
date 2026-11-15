@@ -1,0 +1,24 @@
+{
+  "name": "trojanos-map",
+  "version": "0.1.0",
+  "description": "SC Iris map environment: an MCP server that pulls USC campus and neighborhood data from free OpenStreetMap services and a Leaflet map that draws every tool result live.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=18.17" },
+  "bin": { "trojanos-map": "server/index.js" },
+  "scripts": {
+    "start": "node server/index.js",
+    "map": "node server/index.js --map-only",
+    "lens": "node server/index.js --map-only",
+    "demo": "node scripts/demo.js",
+    "demo:offline": "OSM_MOCK=1 node scripts/demo.js",
+    "test": "OSM_MOCK=1 node scripts/test.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "leaflet": "1.9.4",
+    "osmtogeojson": "2.2.12",
+    "ws": "8.18.3",
+    "zod": "3.25.76"
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SC Iris Map</title>
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="panel">
+    <header>
+      <div class="brand"><b>SC</b> Iris <span>map</span></div>
+      <div class="conn" id="conn"><i></i><span>Connecting…</span></div>
+    </header>
+    <div class="banner" id="banner" hidden></div>
+    <section>
+      <h2>Layers</h2>
+      <div class="layers" id="layers"></div>
+      <div class="row">
+        <label class="tog"><input type="checkbox" id="tiles" checked> OSM base tiles</label>
+        <label class="tog"><input type="checkbox" id="night"> Night</label>
+      </div>
+    </section>
+    <section id="resultsBox" hidden>
+      <h2 id="resultsTitle">Results</h2>
+      <ol class="results" id="results"></ol>
+      <p class="note" id="resultsNote"></p>
+    </section>
+    <section id="routeBox" hidden>
+      <h2>Walking route</h2>
+      <div class="sum" id="routeSum"></div>
+      <div class="walk">
+        <button type="button" id="walkBtn" class="pri">Walk it</button>
+        <label>Speed <select id="speed"><option value="1">1×</option><option value="4" selected>4×</option><option value="10">10×</option><option value="25">25×</option></select></label>
+      </div>
+      <ol class="steps" id="steps"></ol>
+      <p class="note" id="routeNote"></p>
+    </section>
+    <section class="help">
+      <h2>Try it</h2>
+      <p>Ask your agent: <i>“Load the USC campus map”</i>, <i>“I want to buy avocados”</i>, <i>“Walk me to the closest one”</i>.</p>
+      <p>Or click anywhere on the map to walk there.</p>
+    </section>
+    <footer>Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> · Routing: OSRM · Geocoding: Nominatim</footer>
+  </aside>
+  <main class="mapwrap">
+    <div id="map" aria-label="Map of USC and the surrounding neighborhood"></div>
+    <div class="hud" id="hud" hidden>
+      <div class="hud-k">SC Iris · glasses view</div>
+      <div class="hud-arrow" id="hudArrow">↑</div>
+      <div class="hud-t" id="hudT">Head north</div>
+      <div class="hud-s" id="hudS">—</div>
+    </div>
+  </main>
+</div>
+<script src="/vendor/leaflet/leaflet.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
